@@ -22,9 +22,9 @@
 
         public Triangle(double sideA, double sideB, double sideC)
         {
-            if(sideA < 0 || sideB < 0 || sideC < 0)
+            if(sideA <= 0 || sideB <= 0 || sideC <= 0)
             {
-                throw new ArgumentException("Сторона треугольника не может принимать отрицательное значение");
+                throw new ArgumentException("Сторона треугольника должна быть больше нуля");
             }
 
             SideA = sideA;

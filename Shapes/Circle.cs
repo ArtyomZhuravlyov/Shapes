@@ -7,8 +7,8 @@
 
         public Circle(double radius)
         {
-            if(radius < 0)
-                throw new ArgumentException("Радиус окружности не может принимать отрицательное значение");
+            if(radius <= 0)
+                throw new ArgumentException("Радиус окружности должен быть больше нуля");
 
             Radius = radius;
         }
