@@ -23,9 +23,10 @@
         public Triangle(double sideA, double sideB, double sideC)
         {
             if(sideA <= 0 || sideB <= 0 || sideC <= 0)
-            {
-                throw new ArgumentException("Сторона треугольника должна быть больше нуля");
-            }
+                throw new ArgumentException($"Стороны треугольника должна быть больше нуля. A:{sideA} B:{sideB} C:{sideC}");
+
+            if(sideA + sideB <= sideC || sideA + sideC <= sideB || sideC + sideB <= sideA)
+                throw new ArgumentException($"Невозможно создать треугольник с такими сторонами. A:{sideA} B:{sideB} C:{sideC}");
 
             SideA = sideA;
             SideB = sideB;
